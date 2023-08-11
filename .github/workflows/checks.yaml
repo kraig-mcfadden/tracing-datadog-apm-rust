@@ -1,0 +1,34 @@
+name: Checks
+
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: cargo test
+
+  fmt_check:
+    name: Check formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check formatting
+        run: cargo fmt --check
+
+  lint_check:
+    name: Check lints
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check lints
+        run: cargo clippy --all-targets --all-features -- -D warnings
