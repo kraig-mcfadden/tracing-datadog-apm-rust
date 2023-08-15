@@ -536,4 +536,32 @@ mod tests {
     fn test_span_meta_key_http_method() {
         assert_eq!(&*SpanMetaKey::HttpMethod.to_string(), "http.method");
     }
+
+    #[test]
+    fn test_span_meta_key_http_url() {
+        assert_eq!(&*SpanMetaKey::HttpUrl.to_string(), "http.url");
+    }
+
+    #[test]
+    fn test_span_meta_key_http_status_code() {
+        assert_eq!(
+            &*SpanMetaKey::HttpStatusCode.to_string(),
+            "http.status_code"
+        );
+    }
+
+    #[test]
+    fn test_span_meta_key_error_msg() {
+        assert_eq!(&*SpanMetaKey::ErrorMsg.to_string(), "error.msg");
+    }
+
+    #[test]
+    fn test_span_meta_key_error_stack() {
+        assert_eq!(&*SpanMetaKey::ErrorStack.to_string(), "error.stack");
+    }
+
+    #[test]
+    fn test_span_meta_key_error_type() {
+        assert_eq!(&*SpanMetaKey::ErrorType.to_string(), "error.type");
+    }
 }
